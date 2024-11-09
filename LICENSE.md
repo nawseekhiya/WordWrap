@@ -46,7 +46,7 @@ The **WordWrap Team** may, at its sole discretion, terminate this License and re
 
 ## Entire Agreement
 
-This License constitutes the entire agreement between the parties concerning the subject matter hereof and supersedes all prior or contemporaneous oral or written understandings.
+This License constitutes the entire agreement between the parties concerning the subject matter hereof and supersedes all prior or contemporaneous oral or written understandings
 
 ## Modification
 
