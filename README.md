@@ -35,25 +35,94 @@ The platform is being developed using the following tech stack:
 
 ## **Installation**
 
-To get started with the project locally, follow the instructions below:
+To set up the WordWrap project locally, follow these steps:
 
-1. Clone this repository:
+### Prerequisites
+
+Before you begin, make sure you have the following installed:
+- **Node.js** (v16 or above)
+- **Firebase CLI** (for Firebase functions and hosting)
+- **Git**
+
+### Setup Instructions
+
+1. **Clone the Repository**:
+   Clone the WordWrap project repository from GitHub to your local machine.
+
     ```bash
     git clone https://github.com/nawseekhiya/WordWrap.git
     ```
-2. Navigate to the project directory:
+
+2. **Navigate to Project Directory**:
+   Change your working directory to the project folder.
+
     ```bash
     cd WordWrap
     ```
-3. Install dependencies:
-    ```bash
-    npm install
-    ```
-4. Run the development server:
-    ```bash
-    npm run dev
-    ```
-5. Open your browser and go to `http://localhost:3000`.
+
+3. **Install Dependencies**:
+   The project is divided into two main parts: `client` for the frontend and `server` for the backend Firebase functions. 
+
+   - Install frontend dependencies:
+     ```bash
+     cd client
+     npm install
+     ```
+
+   - Install backend dependencies:
+     ```bash
+     cd ../server
+     npm install
+     ```
+
+4. **Firebase Configuration**:
+   Set up a Firebase project for the backend:
+
+   - Go to the [Firebase Console](https://console.firebase.google.com/) and create a new project.
+   - Enable **Firestore Database** and **Firebase Authentication** (for user management).
+   - Copy your Firebase configuration settings (API key, project ID, etc.) and paste them into the configuration file `client/src/config/firebaseConfig.js`.
+
+5. **Environment Variables**:
+   - Create a `.env` file in both `client` and `server` directories to store sensitive information like Firebase API keys.
+   - In the **client** `.env` file, add your Firebase project configuration details:
+     ```plaintext
+     REACT_APP_FIREBASE_API_KEY=your_api_key
+     REACT_APP_FIREBASE_AUTH_DOMAIN=your_auth_domain
+     REACT_APP_FIREBASE_PROJECT_ID=your_project_id
+     REACT_APP_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+     REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+     REACT_APP_FIREBASE_APP_ID=your_app_id
+     ```
+   - In the **server** `.env` file, add any necessary backend configurations.
+
+6. **Run the Development Servers**:
+   Start both the client and server to run the project locally.
+
+   - In the client directory:
+     ```bash
+     cd client
+     npm run dev
+     ```
+     This command will start the frontend development server on `http://localhost:3000` (or another available port).
+
+   - In the server directory, start Firebase emulators for backend functions:
+     ```bash
+     cd ../server
+     firebase emulators:start
+     ```
+     This will start the Firebase emulators for functions and Firestore locally, allowing backend testing without needing to deploy.
+
+7. **Open the App**:
+   Once both the frontend and backend are running, open your browser and go to:
+   ```
+   http://localhost:3000
+   ```
+   You should see the WordWrap platform interface, ready for local development and testing.
+
+### Additional Notes
+
+- If you make changes to Firebase functions, redeploy the functions or restart the Firebase emulator for changes to take effect.
+- Customize the `.env` and `firebaseConfig.js` file paths and settings based on your Firebase project and development environment needs.
 
 ## **Usage**
 
